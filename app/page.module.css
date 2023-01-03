@@ -1,29 +1,15 @@
 .container {
-  display: grid;
-  grid-template-rows: max-content 1fr max-content;
-  min-height: 100vh;
-  place-content: center;
-}
-
-.main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
   gap: 1rem;
-}
 
-.footer {
-  display: flex;
-  justify-content: center;
-}
+  min-height: 100vh;
+  /* border: 1px solid red; */
 
-.tmpImg {
-  border: 1px solid red;
-  image-rendering: pixelated;
-}
-
-.pokeContainer {
-  display: grid;
-  gap: 1rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 1rem;
 }
