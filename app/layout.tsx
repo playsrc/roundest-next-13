@@ -1,9 +1,13 @@
 import StyledComponentsRegistry from "../lib/registry";
-import { Inter } from "@next/font/google";
+import { Patrick_Hand } from "@next/font/google";
+
 import "../styles/reset.css";
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Patrick_Hand({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
@@ -11,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={font.className}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
