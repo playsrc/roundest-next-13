@@ -6,6 +6,8 @@ import { getRandomIds } from "../lib/get-random-ids";
 
 import styles from "./page.module.css";
 
+export const dynamic = "force-dynamic";
+
 async function getPokemon() {
   const { firstId, secondId } = getRandomIds();
 
