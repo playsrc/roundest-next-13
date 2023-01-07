@@ -1,5 +1,21 @@
 import { db } from "./db";
 
+/**
+ * Generations Count
+ * I    - 151
+ * II   - 251
+ * III  - 386
+ * IV   - 493
+ * V    - 649
+ * VI   - 721
+ * VII  - 809
+ * VIII - 905
+ * IX   - 1009
+ */
+
+// 1/4 of the first gen for dev testing
+export const POKEMON_COUNT = 37;
+
 async function Seed() {
   const res = await fetch(
     "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon.csv"
@@ -8,7 +24,7 @@ async function Seed() {
   const text = (await res.text()).split("\n");
 
   // slice the first row to avoid header text
-  const formattedPokemon = text.slice(1, 151 + 1).map((data) => {
+  const formattedPokemon = text.slice(1, POKEMON_COUNT + 1).map((data) => {
     const row = data.split(",");
     const id = parseInt(row[0]);
     const name = row[1];
@@ -27,25 +43,3 @@ async function Seed() {
 }
 
 Seed();
-
-// const doBackfill = async () => {
-//   const pokeApi = new PokemonClient();
-
-//   const allPokemon = await pokeApi.listPokemons(0, 493);
-
-//   const formattedPokemon = allPokemon.results.map((p, index) => ({
-//     id: index + 1,
-//     name: (p as { name: string }).name,
-//     spriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-//       index + 1
-//     }.png`,
-//   }));
-
-//   const creation = await prisma.pokemon.createMany({
-//     data: formattedPokemon,
-//   });
-
-//   console.log("Creation?", creation);
-// };
-
-// doBackfill();

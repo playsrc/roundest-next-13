@@ -1,13 +1,13 @@
-const MAX_DEX_ID = 151;
+import { POKEMON_COUNT } from "./seed";
 
 export function getRandomIds() {
   // Generate a random number between min and max
-  const firstId = Math.floor(Math.random() * MAX_DEX_ID) + 1;
+  const firstId = Math.floor(Math.random() * POKEMON_COUNT) + 1;
 
   // Generate a random number between min and max that is different from randomNumber1
-  let secondId = Math.floor(Math.random() * MAX_DEX_ID) + 1;
+  let secondId = Math.floor(Math.random() * POKEMON_COUNT) + 1;
   while (secondId === firstId) {
-    secondId = Math.floor(Math.random() * MAX_DEX_ID) + 1;
+    secondId = Math.floor(Math.random() * POKEMON_COUNT) + 1;
   }
 
   return { firstId, secondId };
