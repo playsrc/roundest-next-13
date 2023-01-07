@@ -4,7 +4,7 @@ import { Pokemon } from "@prisma/client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTransition, useState } from "react";
-import { ComparisonContainer, MyButton, VoteContainer } from "./styles";
+import styles from "./styles.module.css";
 
 interface Props {
   pokemons: {
@@ -39,8 +39,8 @@ export default function ComparisonBox({ pokemons }: Props) {
   }
 
   return (
-    <ComparisonContainer>
-      <VoteContainer>
+    <div className={styles.ComparisonContainer}>
+      <div className={styles.VoteContainer}>
         <p>{firstPokemon.name}</p>
         <Image
           src={firstPokemon?.spriteUrl}
@@ -48,15 +48,16 @@ export default function ComparisonBox({ pokemons }: Props) {
           width={256}
           height={256}
         />
-        <MyButton
+        <button
+          className={styles.MyButton}
           disabled={isPending}
           onClick={() => handleVote(firstPokemon.id)}
         >
           {isMutating ? "Loading" : "Rounder"}
-        </MyButton>
-      </VoteContainer>
+        </button>
+      </div>
       <span>OR</span>
-      <VoteContainer>
+      <div className={styles.VoteContainer}>
         <p>{secondPokemon.name}</p>
         <Image
           src={secondPokemon?.spriteUrl}
@@ -64,13 +65,14 @@ export default function ComparisonBox({ pokemons }: Props) {
           width={256}
           height={256}
         />
-        <MyButton
+        <button
+          className={styles.MyButton}
           disabled={isPending}
           onClick={() => handleVote(secondPokemon.id)}
         >
           {isMutating ? "Loading" : "Rounder"}
-        </MyButton>
-      </VoteContainer>
-    </ComparisonContainer>
+        </button>
+      </div>
+    </div>
   );
 }

@@ -9,7 +9,19 @@
   /* border: 1px solid red; */
 
   width: 100%;
-  max-width: 320px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+@media screen and (min-width: 425px) {
+  .container {
+    max-width: 425px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    max-width: 700px;
+    padding-block: 1.5rem;
+  }
 }

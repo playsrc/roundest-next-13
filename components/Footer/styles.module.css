@@ -30,3 +30,37 @@
   height: 2px;
   background-color: white;
 }
+
+@media screen and (min-width: 375px) {
+  .link {
+    width: 200px;
+  }
+
+  .link > span {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .link {
+    display: flex;
+    grid-template-columns: unset;
+    padding: unset;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .link > span {
+    width: 100%;
+    font-size: 1.75rem;
+  }
+
+  .link::before {
+    display: none;
+  }
+}

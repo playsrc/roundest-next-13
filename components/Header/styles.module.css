@@ -1,9 +1,29 @@
 .header {
-  max-width: 25ch;
+  max-width: 24ch;
 }
 
 .header > h1 {
   font-size: 1.75rem;
   text-align: center;
   font-weight: 400;
+}
+
+@media screen and (min-width: 375px) {
+  .header {
+    max-width: 25ch;
+  }
+
+  .header > h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .header {
+    max-width: 100%;
+  }
+
+  .header > h1 {
+    font-size: 4rem;
+  }
 }
