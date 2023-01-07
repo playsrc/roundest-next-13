@@ -14,7 +14,7 @@ import { db } from "./db";
  */
 
 // 1/4 of the first gen for dev testing
-export const POKEMON_COUNT = 37;
+const POKEMON_COUNT = 37;
 
 async function Seed() {
   const res = await fetch(

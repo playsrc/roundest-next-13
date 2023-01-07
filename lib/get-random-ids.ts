@@ -1,4 +1,4 @@
-import { POKEMON_COUNT } from "./seed";
+const POKEMON_COUNT = 37;
 
 export function getRandomIds() {
   // Generate a random number between min and max
