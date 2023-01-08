@@ -1,26 +1,43 @@
 .header {
-  max-width: 24ch;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .header > h1 {
-  font-size: 1.75rem;
-  text-align: center;
+  margin: 0 auto;
+  font-size: 2rem;
   font-weight: 400;
+  text-align: center;
 }
 
-@media screen and (min-width: 375px) {
-  .header {
-    max-width: 25ch;
-  }
+.NavLink {
+  padding: 0.5rem;
+  display: block;
 
-  .header > h1 {
-    font-size: 2rem;
-  }
+  color: white;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  text-decoration: none;
+
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.NavLink > span {
+  font-weight: bold;
 }
 
 @media screen and (min-width: 700px) {
-  .header {
-    max-width: 100%;
+  .NavLink {
+    font-size: 2rem;
+    border: none;
+  }
+
+  .NavLink > span {
+    font-size: 2.5rem;
   }
 
   .header > h1 {
