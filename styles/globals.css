@@ -1,3 +1,7 @@
+:root {
+  color-scheme: dark;
+}
+
 body {
   min-height: 100vh;
   background-color: #262c31;
