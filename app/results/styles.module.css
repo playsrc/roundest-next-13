@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.RowImage {
+  border-radius: 16px;
+  height: "auto";
+  width: 64px;
+  height: 64px;
+  position: relative;
+  image-rendering: pixelated;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+.RowName {
+  border-bottom: 2px solid white;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.RowRank {
+  padding-right: 1rem;
+  border-bottom: 2px solid white;
+  font-size: 1.5rem;
+  text-align: right;
+}

@@ -1,5 +1,6 @@
-import Header from "../../components/Header";
 import { db } from "../../lib/db";
+import Image from "next/image";
+import styles from "./styles.module.css";
 
 // ISR
 export const revalidate = 60;
@@ -24,24 +25,32 @@ async function getPokemonVotes() {
 
 export default async function Results() {
   const res = await getPokemonVotes();
-  const totalVotes = res.reduce((acc, curr) => acc + curr._count.votes, 0);
-  console.log(totalVotes);
+  // const totalVotes = res.reduce((acc, curr) => acc + curr._count.votes, 0);
+  // console.log("Total votes ", totalVotes);
+
   return (
-    <>
-      <Header text="Results" />
-      <ol>
-        {res.map((pokemon) => {
-          const percentage = (
-            (pokemon._count.votes * 100) /
-            totalVotes
-          ).toFixed(2);
-          return (
-            <li key={pokemon.id}>
-              <span>{pokemon.name}</span> <span>{percentage}%</span>
-            </li>
-          );
-        })}
-      </ol>
-    </>
+    <main className={styles.container}>
+      <table className={styles.Table}>
+        <tbody>
+          {res.map((pokemon) => (
+            <tr key={pokemon.id} className={styles.Row}>
+              <td className={styles.RowImage}>
+                <Image
+                  src={pokemon?.spriteUrl}
+                  alt={pokemon.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw,
+                         (max-width: 1200px) 50vw,
+                         33vw"
+                  priority
+                />
+              </td>
+              <td className={styles.RowName}>{pokemon.name}</td>
+              <td className={styles.RowRank}>{pokemon._count.votes} &uarr;</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </main>
   );
 }
