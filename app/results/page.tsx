@@ -30,11 +30,11 @@ export default async function Results() {
 
   return (
     <main className={styles.container}>
-      <table className={styles.Table}>
+      <table className={styles.table}>
         <tbody>
           {res.map((pokemon) => (
-            <tr key={pokemon.id} className={styles.Row}>
-              <td className={styles.RowImage}>
+            <tr key={pokemon.id}>
+              <td className={styles.rowImage}>
                 <Image
                   src={pokemon?.spriteUrl}
                   alt={pokemon.name}
@@ -45,8 +45,8 @@ export default async function Results() {
                   priority
                 />
               </td>
-              <td className={styles.RowName}>{pokemon.name}</td>
-              <td className={styles.RowRank}>{pokemon._count.votes} &uarr;</td>
+              <td className={styles.rowName}>{pokemon.name}</td>
+              <td className={styles.rowRank}>{pokemon._count.votes} &uarr;</td>
             </tr>
           ))}
         </tbody>
