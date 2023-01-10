@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <>
       <Header text="About" overrideLinks={{ secondLinkHref: "results" }} />
-      <main>{children}</main>
+      {children}
     </>
   );
 }
