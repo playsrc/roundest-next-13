@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 👾 Roundest Mon
+
+![](.github/banner1.jpg)
+
+Roundest Mon is a web-based application that allows users to vote on which Pokemon they think is the roundest. The Pokemons are pulled from a database and new pair will be presented after each vote.
+
+> **Note**
+> This project is still under development and has not been deployed yet. I'm still figuring out some stuff and learning many things.
+
+## Table of Contents
+
+- Introduction
+
+  - [Getting Started](#getting-started)
+  - [Features](#features)
+  - [Motivation](#motivation)
+  - [Design and layout](#design-and-layout)
+
+- Installation
+
+  - [Project Setup](#project-setup)
+  - [Environment Variables](#environment-variables)
+  - [Seed your Database](#seed-your-database)
+  - [Running Locally](#running-locally)
+  - [API Reference](#api-reference)
+  - [Technical Details](#technical-details)
+
+- About the Project
+
+  - [Contributing](#contributing)
+  - [Disclaimer](#disclaimer)
+  - [License](#license)
 
 ## Getting Started
 
-First, run the development server:
+- Visit the [website]() (_Not deployed yet_) on your preferred web browser
+- On the main page, you will see two randomly selected Pokemon and their images
+- Cast your vote by clicking on the "Vote" button below to the Pokemon
+- You can view the voting results by clicking on the "Results" link at the bottom of the page
+
+## Features
+
+- View two random Pokemon and their corresponding images
+- Cast a vote for the roundest Pokemon
+- View voting results page
+
+## Motivation
+
+This app was originally created by Theo @t3dotgg on his YouTube channel.
+I followed along with his video and built a very similar app, however I wanted to try making it on my own to see if I could do it as well.
+So this is the result.
+
+## Design and layout
+
+![](.github/banner2.jpg)
+
+![](.github/layout.png)
+
+## Installation
+
+### Project setup
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/mateusabelli/roundest-next-13.git
+
+cd roundest-next-13
+
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+mv .env.example .env
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Modify the DB URL in your .env
+DATABASE_URL="sqlserver://localhost:1433;database=roundest;integratedSecurity=true;trustServerCertificate=true;"
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Check out https://www.prisma.io/docs/reference/database-reference/connection-urls
+# For examples with different DB connection strings.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Seed your database
 
-## Learn More
+```bash
+npm run ts-node ./lib/seed.ts
 
-To learn more about Next.js, take a look at the following resources:
+# Make sure to delete the tables if you need to run this more than once
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+# Start the dev server on localhost:3000
+npm run dev
 
-## Deploy on Vercel
+# Same as above but with TurboPack
+npm run turbo
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### API Reference
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The app uses the [PokeAPI](https://github.com/PokeAPI) repository to retrieve the sprites of the Pokemons.
+
+## Technical Details
+
+- Built using Next.js 13
+- Styled using CSS Modules
+- Utilizes the PokeAPI for sprites
+- The app is mobile-friendly and responsive to different screen sizes
+- Utilizes Prisma ORM for flexibility to use different DBs
+- Made with App directory and beta features of Next.js 13
+
+## Contributing
+
+If you would like to contribute to the development of this app, please feel free to fork the repository and make a pull request with your changes.
+
+## Disclaimer
+
+Pokemon is a trademark of Nintendo. This web app is not endorsed or affiliated with Nintendo in any way.
+
+## License
+
+This project is licensed under the **MIT License**. See the LICENSE file for details.
