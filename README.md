@@ -9,26 +9,32 @@ Roundest Mon is a web-based application that allows users to vote on which Pokem
 
 ## Table of Contents
 
-- Introduction
+<details>
+  <summary>Introduction</summary>
 
-  - [Getting Started](#getting-started)
-  - [Motivation](#motivation)
-  - [Design and layout](#design-and-layout)
+- [Getting Started](#getting-started)
+- [Motivation](#motivation)
+- [Design and layout](#design-and-layout)
+</details>
 
-- Installation
+<details>
+  <summary>Installation</summary>
 
-  - [Project Setup](#project-setup)
-  - [Environment Variables](#environment-variables)
-  - [Seed your Database](#seed-your-database)
-  - [Running Locally](#running-locally)
-  - [API Reference](#api-reference)
-  - [Technical Details](#technical-details)
+- [Project Setup](#project-setup)
+- [Environment Variables](#environment-variables)
+- [Seed your Database](#seed-your-database)
+- [Running Locally](#running-locally)
+- [API Reference](#api-reference)
+- [Technical Details](#technical-details)
+</details>
 
-- About the Project
+<details>
+  <summary>About the Project</summary>
 
-  - [Contributing](#contributing)
-  - [Disclaimer](#disclaimer)
-  - [License](#license)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+</details>
 
 ## Getting Started
 
@@ -47,7 +53,12 @@ So this is the result.
 
 ![](.github/banner2.jpg)
 
+<details>
+  <summary>Show the Excalidraw design mockup</summary>
+
 ![](.github/layout.png)
+
+</details>
 
 ## Installation
 
