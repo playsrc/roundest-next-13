@@ -12,7 +12,6 @@ Roundest Mon is a web-based application that allows users to vote on which Pokem
 - Introduction
 
   - [Getting Started](#getting-started)
-  - [Features](#features)
   - [Motivation](#motivation)
   - [Design and layout](#design-and-layout)
 
@@ -37,12 +36,6 @@ Roundest Mon is a web-based application that allows users to vote on which Pokem
 - On the main page, you will see two randomly selected Pokemon and their images
 - Cast your vote by clicking on the "Vote" button below to the Pokemon
 - You can view the voting results by clicking on the "Results" link at the bottom of the page
-
-## Features
-
-- View two random Pokemon and their corresponding images
-- Cast a vote for the roundest Pokemon
-- View voting results page
 
 ## Motivation
 
